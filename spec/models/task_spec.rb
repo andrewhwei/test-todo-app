@@ -38,7 +38,7 @@ RSpec.describe Task, type: :model do
     end
 
     it 'should return false if Time.now is less than deadline' do
-      task = Task.new(deadline: "2200-05-19 10:30:14")
+      task = Task.new(deadline: 1.day.from_now)
       overdue = task.overdue?
       expect(overdue).to eq(false)
     end
